@@ -5,6 +5,13 @@ con los componentes reales del front (`src/`) — no reimplementaciones.
 
 Trabajado en orden atómico: **Átomos → Moléculas** primero (Organismos, Templates y Páginas quedan para después).
 
+## Ver online
+
+**https://goberna-lab.github.io/Hermes-StoryBook/**
+
+Se publica solo: cada push a `master` corre `.github/workflows/storybook-pages.yml`, que hace `storybook build`
+y sube `storybook-static/` a GitHub Pages (runners de GitHub, no los self-hosted de VPS1).
+
 ## Correr en local
 
 ```bash
@@ -16,6 +23,8 @@ npm run storybook   # http://localhost:6006
 
 - `.storybook/` — configuración (framework `@storybook/react-vite`, addons `a11y`, `docs`, `vitest`).
 - `src/stories/` — las historias, organizadas por capa atómica y por feature.
+- `src/assets/` — imágenes que importan los componentes (el `.gitignore` general excluye `*.png`; acá están
+  exceptuadas a propósito, sin ellas el build rompe).
 - `src/` — el resto del front de Hermes (`components/`, `features/`, `dominio/`, `lib/`), tal como vive en el
   repo principal: las historias importan los componentes reales desde acá, no copias.
 

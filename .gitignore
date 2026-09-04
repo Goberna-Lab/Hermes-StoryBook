@@ -29,6 +29,7 @@ storybook-static
 .playwright-mcp/
 *.png
 !public/*.png
+!src/assets/*.png
 
 # Artefactos de build de TS
 *.tsbuildinfo
